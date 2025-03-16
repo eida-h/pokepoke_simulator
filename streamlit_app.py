@@ -36,13 +36,20 @@ num_std = st.slider("標準偏差の倍数", min_value=1, max_value=5, value=1, 
 # 追加の説明
 damages, probability = ps.get_damage_in_std(num_std=num_std)
 
+
+dam_eval = int(ps.expected_value*ps.damage_unit)
+# 小数点以下2桁まで表示
+dam_std = ps.std*ps.damage_unit
+dam_std = round(dam_std, 2)
+probability = round(probability*100, 1)
+
 summary_markdown_table = f"""
 | | |
 |-|-|
 | エネルギー数 | {n} |
-| 期待値 | {ps.expected_value*ps.damage_unit} |
-| 標準偏差 | {ps.std*ps.damage_unit} |
-| {num_std}標準偏差内の確率 | {probability} |
+| 期待値 | {dam_eval} |
+| 標準偏差 | {dam_std} |
+| {num_std}標準偏差内の確率 | {probability} % |
 | {num_std}標準偏差内のダメージ | {damages[0]} から {damages[-1]} |
 """
 st.markdown(summary_markdown_table)
