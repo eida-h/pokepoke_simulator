@@ -5,10 +5,11 @@ from simulator.power_storm import PowerStorm
 import pandas as pd
 
 # アプリのタイトル
-st.title("セレビィ ダメージ計算(ポケポケ)")
+st.title("セレビィex ダメージ計算")
 
 # 説明文
 st.markdown("""
+ポケポケのセレビィexの技「パワフルブルーム」のダメージを計算するアプリです。
 ### 使い方:
 1. エネルギー数をスライダーで選択
 2. 標準偏差の倍数を選択し、確率とダメージを確認
