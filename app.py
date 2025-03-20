@@ -54,5 +54,3 @@ st.markdown(summary_markdown_table)
 # タイトル
 st.write("**横軸:** ダメージ | **縦軸:** 確率")
 st.bar_chart(data)
-
-st.write("test")
