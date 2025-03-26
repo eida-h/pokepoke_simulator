@@ -13,7 +13,9 @@ def kasumi_ui():
         st.write(f"エネルギー数: {num_energy}")
         
     st.write("履歴")
-    st.write(ks.history)
+    # st.write(ks.history)
+    str_hist = ["o" * i + "x" for i in ks.history]
+    st.write(str_hist)
 
 
 
