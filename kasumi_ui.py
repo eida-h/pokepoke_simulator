@@ -1,20 +1,20 @@
 import streamlit as st
-from simulator.kasumi import kasumi
+from simulator.kasumi import Kasumi_sim
 
-history = []
 
+    
 def kasumi_ui():
     # アプリのタイトル
     st.title("カスミ")
+    ks = Kasumi_sim()
 
     if st.button("カードを使う"):
-        num_energy = kasumi()
+        num_energy = ks.use_card()
         st.write(f"エネルギー数: {num_energy}")
-        history.append(num_energy)
-    
+        
     st.write("履歴")
-    st.write(history)
-    return history
+    st.write(ks.history)
+
 
 
 
